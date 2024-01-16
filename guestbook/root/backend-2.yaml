@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/eyad-kobatte/test-argocd-site.git
-    path: guestbook/backend
+    path: guestbook/backend-2
     targetRevision: HEAD
   destination:
     namespace: default

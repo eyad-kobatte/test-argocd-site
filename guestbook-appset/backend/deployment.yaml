@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-appset-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guestbook-appset-backend
+  template:
+    metadata:
+      labels:
+        app: guestbook-appset-backend
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-appset-backend
+        ports:
+        - containerPort: 80

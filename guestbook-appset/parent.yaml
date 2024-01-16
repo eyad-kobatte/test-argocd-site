@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook-apps
+  name: guestbook-appset-apps
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -13,7 +13,7 @@ spec:
       repoURL: https://github.com/eyad-kobatte/test-argocd-site.git
       revision: HEAD
       directories:
-      - path: guestbook/*
+      - path: guestbook-appset/*
   template:
     metadata:
       name: '{{.path.basename}}'

@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-bff
+  name: guestbook-aoa-bff
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: guestbook-bff
+      app: guestbook-aoa-bff
   template:
     metadata:
       labels:
-        app: guestbook-bff
+        app: guestbook-aoa-bff
     spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
-        name: guestbook-bff
+        name: guestbook-aoa-bff
         ports:
         - containerPort: 80

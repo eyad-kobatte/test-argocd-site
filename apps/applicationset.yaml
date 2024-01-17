@@ -16,7 +16,7 @@ spec:
       - path: guestbook-appset/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: 'appset-{{.path.basename}}'
     spec:
       project: default
       source:

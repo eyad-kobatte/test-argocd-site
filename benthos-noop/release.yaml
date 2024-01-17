@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: benthos-noop
+spec:
+  selector:
+    appName: benthos-noop
+  ports:
+    - port: 80
+      targetPort: 4196
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: benthos-noop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: benthos-noop
+  template:
+    metadata:
+      labels:
+        app: benthos-noop
+    spec:
+      volumes:
+        - name: benthos-noop-configmap
+          configMap:
+            name: benthos-noop-configmap
+      containers:
+        - name: benthos-noop
+          image: jeffail/benthos:latest
+          ports:
+            - containerPort: 4196
+          volumeMounts:
+            - name: benthos-noop-configmap
+              mountPath: /benthos.yaml
+              subPath: benthos.yaml

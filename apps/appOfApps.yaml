@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: guestbook-appofapps
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    pattern: aoa
 spec:
   project: default
   source:

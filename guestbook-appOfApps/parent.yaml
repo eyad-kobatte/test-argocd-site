@@ -19,6 +19,8 @@ spec:
   template:
     metadata:
       name: 'aoa-{{.path.basename}}'
+      labels:
+        pattern: aoa
     spec:
       project: default
       source:

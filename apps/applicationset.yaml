@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  labels:
+    pattern: appset
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -17,6 +19,8 @@ spec:
   template:
     metadata:
       name: 'appset-{{.path.basename}}'
+      labels:
+        pattern: appset
     spec:
       project: default
       source:

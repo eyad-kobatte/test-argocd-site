@@ -18,7 +18,7 @@ spec:
       - path: dev/user-management/**/config.json
   template:
     metadata:
-      name: 'user-management-{{.path.basename}}'
+      name: 'dev-user-management-{{.path.basename}}'
       labels:
         project: user-management
     spec:

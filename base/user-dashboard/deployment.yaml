@@ -11,9 +11,11 @@ spec:
     metadata:
       labels:
         app: user-dashboard
+      annotations:
+        harvest: 'dev'
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+      - image: IMAGE
         name: user-dashboard
         ports:
         - containerPort: 80

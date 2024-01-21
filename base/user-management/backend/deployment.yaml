@@ -17,3 +17,11 @@ spec:
         name: backend
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: 120M
+            cpu: 10m
+          limits:
+            memory: 350M
+            cpu: 1000m
+

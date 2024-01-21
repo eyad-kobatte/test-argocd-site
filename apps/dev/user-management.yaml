@@ -16,8 +16,6 @@ spec:
       revision: HEAD
       files:
       - path: dev/user-management/**/config.json
-      values:
-        base_dir: "{{index .path 0}}/{{index .path 1}}"
   template:
     metadata:
       name: 'user-management-{{.path.basename}}'

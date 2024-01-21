@@ -7,8 +7,14 @@ http:
 # Common config fields, showing default values
 input:
   label: ""
-  stdin:
-    codec: lines
+  http_server:
+    address: ""
+    path: /post
+    ws_path: /post/ws
+    allowed_verbs:
+      - POST
+    timeout: 5s
+    rate_limit: ""
 
 # Config fields, showing default values
 output:

@@ -15,7 +15,7 @@ spec:
       repoURL: https://github.com/eyad-kobatte/test-argocd-site.git
       revision: HEAD
       files:
-      - path: dev/user-management/**/config.json
+      - path: dev/user-management/**/kustomization.yaml
   template:
     metadata:
       name: 'dev-user-management-{{.path.basename}}'

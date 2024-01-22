@@ -1,12 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: dev-user-management
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  name: dev-admin-mgmt
+  namespace: dev
   labels:
-    project: user-management
+    project: admin-mgmt
 spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
@@ -15,12 +13,12 @@ spec:
       repoURL: https://github.com/eyad-kobatte/test-argocd-site.git
       revision: HEAD
       files:
-      - path: dev/user-management/**/kustomization.yaml
+      - path: dev/admin-mgmt/**/kustomization.yaml
   template:
     metadata:
-      name: 'dev-user-management-{{.path.basename}}'
+      name: 'dev-admin-mgmt-{{.path.basename}}'
       labels:
-        project: user-management
+        project: admin-mgmt
     spec:
       project: dev
       source:

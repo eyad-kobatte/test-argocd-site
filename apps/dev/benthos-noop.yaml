@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: benthos-noop
+  name: dev/benthos-noop
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/eyad-kobatte/test-argocd-site.git
-    path: benthos-noop
+    path: dev/benthos-noop
     targetRevision: HEAD
   destination:
     namespace: default

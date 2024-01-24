@@ -1,7 +1,7 @@
 # This configmap will be created outside this context. From an application codebase.
 # This will not be part of argocd
 http:
-  address: 0.0.0.0:4196
+  address: 0.0.0.0:4197
   debug_endpoints: ${DEBUG_ENDPOINT:false}
 
 # Common config fields, showing default values

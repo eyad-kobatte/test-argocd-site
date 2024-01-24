@@ -26,15 +26,15 @@ spec:
         app: benthos-noop
     spec:
       volumes:
-        - name: benthos-noop-configmap
+        - name: benthos-k-cm
           configMap:
-            name: benthos-noop-configmap
+            name: benthos-k-cm
       containers:
         - name: benthos-noop
           image: jeffail/benthos:latest
           ports:
             - containerPort: 4196
           volumeMounts:
-            - name: benthos-noop-configmap
+            - name: benthos-k-cm
               mountPath: /benthos.yaml
               subPath: benthos.yaml

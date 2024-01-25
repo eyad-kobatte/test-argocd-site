@@ -1,0 +1,13 @@
+appName: test-application
+namespace: default
+replicas: 2
+image:
+  base: "base"
+  tag: latest
+resources:
+  requests:
+    memory: "16Mi"
+    cpu: "50m"
+  limits:
+    memory: "128Mi"
+    cpu: "100m"
